@@ -9,7 +9,7 @@ export default {
         <nav>
             <div class="nav-container">
                 <div class="logo-wrapper">
-                    <img src="../img/dc-logo.png" alt="logo Dc">
+                    <img class="logo" src="../img/dc-logo.png" alt="logo Dc">
                 </div>
 
                 <ul>
@@ -40,6 +40,10 @@ nav {
 .nav-container {
     display: flex;
     justify-content: space-between;
+}
+
+.logo-wrapper {
+    padding: 1rem;
 }
 
 ul {
