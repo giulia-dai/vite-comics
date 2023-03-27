@@ -66,7 +66,7 @@ export default {
     </header>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 nav {
     margin: auto;
     margin-top: 1rem;
@@ -92,9 +92,9 @@ li>a {
     padding: 1rem;
     text-decoration: none;
     color: black;
-}
 
-li>a:hover {
-    color: #008FFA;
+    &:hover {
+        color: #008FFA;
+    }
 }
 </style>

@@ -121,7 +121,7 @@ export default {
     </footer>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .footer-top {
     margin-top: 3rem;
     background-image: url(../img/footer-bg.jpg);
@@ -150,10 +150,10 @@ li>a {
     padding: 0.5rem;
     text-decoration: none;
     color: #84878B;
-}
 
-li>a:hover {
-    color: white;
+    &:hover {
+        color: white;
+    }
 }
 
 .logo-footer {
@@ -186,11 +186,11 @@ button {
     border: 2px solid #0585FF;
     background-color: #303030;
     color: white;
-}
 
-button:hover {
-    background-color: #84878B;
-    color: black;
+    &:hover {
+        background-color: #84878B;
+        color: black;
+    }
 }
 
 .follow-container {
@@ -211,5 +211,4 @@ h3 {
 .social-wrapper>li {
     padding: 7px;
     cursor: pointer;
-}
-</style>
+}</style>
