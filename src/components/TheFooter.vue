@@ -1,7 +1,55 @@
 <script>
 export default {
-    name: "TheFooter"
-
+    name: "TheFooter",
+    data() {
+        return {
+            DC_COMICS: [
+                "Character",
+                "Comics",
+                "Movies",
+                "TV",
+                "Games",
+                "Videos",
+                "News"
+            ],
+            SHOPS: [
+                "Shop DC",
+                "Shop DC Collectibles"
+            ],
+            DC: [
+                "Terme of Use",
+                "Privacy Policy (New)",
+                "Ad Choices",
+                "Advertising",
+                "Jobs",
+                "Subscriptions",
+                "Talent Workshop",
+                "CPCS Certificates",
+                "Ratings",
+                "Shop Help",
+                "Contact us"
+            ],
+            SITES: [
+                "DC",
+                "MAD Magazine",
+                "DC Kids",
+                "DC Universe",
+                "DC Power Visa"
+            ],
+            SOCIALS: [
+                "footer-facebook.png",
+                "footer-twitter.png",
+                "footer-youtube.png",
+                "footer-pinterest.png",
+                "footer-periscope.png"
+            ]
+        }
+    },
+    methods: {
+        getImagePath(imagePath) {
+            return new URL(imagePath, import.meta.url).href;
+        }
+    }
 }
 </script>
 
@@ -11,62 +59,43 @@ export default {
         <div class="footer-top">
             <div class="container-footer">
                 <div class="container">
-                    <ul>
-                        <li>
-                            <h4>DC COMICS</h4>
-                        </li>
-                        <li><a href="#">Character</a></li>
-                        <li><a href="#">Comics</a></li>
-                        <li><a href="#">Movies</a></li>
-                        <li><a href="#">Tv</a></li>
-                        <li><a href="#">Games</a></li>
-                        <li><a href="#">Videos</a></li>
-                        <li><a href="#">News</a></li>
-                    </ul>
 
-                    <ul>
-                        <li>
-                            <h4>DC</h4>
-                        </li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy policy (New)</a></li>
-                        <li><a href="#">Ad Choices</a></li>
-                        <li><a href="#">Advertising</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Subscription</a></li>
-                        <li><a href="#">Talent Workshop</a></li>
-                        <li><a href="#">CPSC Certificates</a></li>
-                        <li><a href="#">Ratings</a></li>
-                        <li><a href="#">Shop Help</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
+                    <div>
+                        <h4>DC COMICS</h4>
 
-                    <ul>
-                        <li>
-                            <h4>SITES</h4>
-                        </li>
-                        <li><a href="#">DC</a></li>
-                        <li><a href="#">MAD Magazine</a></li>
-                        <li><a href="#">Dc Kids</a></li>
-                        <li><a href="#">DC Universe</a></li>
-                        <li><a href="#">DC Power Visa</a></li>
-                    </ul>
+                        <ul>
+                            <li v-for="comic in DC_COMICS"><a href="#">{{ comic }}</a></li>
+                        </ul>
+                    </div>
 
-                    <ul>
-                        <li>
-                            <h4>SHOP</h4>
-                        </li>
-                        <li><a href="#">Shop DC</a></li>
-                        <li><a href="#">Shop DC Collectibles</a></li>
-                    </ul>
+                    <div>
+                        <h4>SHOP</h4>
+                        <ul>
+                            <li v-for="shop in SHOPS"><a href="#">{{ shop }}</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>DC</h4>
+
+                        <ul>
+                            <li v-for="link_DC in DC"><a href="#">{{ link_DC }}</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4>SITES</h4>
+
+                        <ul>
+                            <li v-for="site in SITES"><a href="#">{{ site }}</a></li>
+                        </ul>
+                    </div>
                 </div>
-
-            </div>
-            <div class="logo-footer">
-                <img class="img-footer" src="../img/dc-logo-bg.png" alt="logo dc">
+                <div class="logo-footer">
+                    <img class="img-footer" src="../img/dc-logo-bg.png" alt="logo dc">
+                </div>
             </div>
         </div>
-
         <!-- footer bottom -->
 
         <div class="footer-bottom">
@@ -78,17 +107,17 @@ export default {
 
                 <div class="follow-container">
                     <h3>FOLLOW US</h3>
-                    <div class="social-wrapper">
-                        <img src="../img/footer-facebook.png" alt="log facebook">
-                        <img src="../img/footer-twitter.png" alt="log twitter">
-                        <img src="../img/footer-youtube.png" alt="log youtube">
-                        <img src="../img/footer-pinterest.png" alt="log pinterest">
-                        <img src="../img/footer-periscope.png" alt="log periscope">
-                    </div>
+                    <ul class="social-wrapper">
+                        <li v-for="social in SOCIALS">
+                            <img :src="getImagePath(`../img/${social}`)">
+                        </li>
+                    </ul>
 
                 </div>
             </div>
         </div>
+
+
     </footer>
 </template>
 
@@ -97,7 +126,8 @@ export default {
     margin-top: 3rem;
     background-image: url(../img/footer-bg.jpg);
     background-size: cover;
-    padding: 2.5rem;
+    padding: 1.5rem;
+
 }
 
 .container {
@@ -133,8 +163,8 @@ li>a:hover {
 
 .img-footer {
     position: absolute;
-    width: 340px;
-    top: -300px;
+    width: 280px;
+    top: -280px;
     left: -650px;
 }
 
@@ -171,14 +201,15 @@ button:hover {
 
 .social-wrapper {
     padding: 0 1rem;
+    display: flex;
 }
 
 h3 {
     color: #0585FF;
 }
 
-.social-wrapper>img {
-    padding: 10px;
+.social-wrapper>li {
+    padding: 7px;
     cursor: pointer;
 }
 </style>
