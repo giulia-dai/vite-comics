@@ -1,6 +1,50 @@
 <script>
 export default {
-    name: "TheHeader"
+    name: "TheHeader",
+    data() {
+        return {
+            logo: "dc-logo.png",
+            sections: [
+                {
+                    text: "CHARACTERS"
+                },
+                {
+                    text: "COMICS"
+                },
+                {
+                    text: "MOVIES"
+                },
+                {
+                    text: "TV"
+                },
+                {
+                    text: "GAMES"
+                },
+                {
+                    text: "COLLECTIBLES"
+                },
+                {
+                    text: "VIDEOS"
+                },
+                {
+                    text: "FANS"
+                },
+                {
+                    text: "NEWS"
+                },
+                {
+                    text: "SHOP"
+                }
+            ]
+
+        }
+    },
+    methods: {
+        getImagePath(imagePath) {
+            return new URL(imagePath, import.meta.url).href;
+        }
+    }
+
 }
 </script>
 
@@ -9,20 +53,12 @@ export default {
         <nav>
             <div class="nav-container">
                 <div class="logo-wrapper">
-                    <img class="logo" src="../img/dc-logo.png" alt="logo Dc">
+                    <img class="logo" :src="getImagePath(`../img/${logo}`)">
                 </div>
 
                 <ul>
-                    <li><a href="#">CHARACTERS</a></li>
-                    <li><a href="#">COMICS</a></li>
-                    <li><a href="#">MOVIES</a></li>
-                    <li><a href="#">TV</a></li>
-                    <li><a href="#">GAMES</a></li>
-                    <li><a href="#">COLLECTIBLES</a></li>
-                    <li><a href="#">VIDEOS</a></li>
-                    <li><a href="#">FANS</a></li>
-                    <li><a href="#">NEWS</a></li>
-                    <li><a href="#">SHOP</a></li>
+                    <li v-for="section in sections"><a href="#">{{ section.text }}</a></li>
+
                 </ul>
             </div>
 
