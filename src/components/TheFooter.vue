@@ -123,7 +123,6 @@ export default {
 
 <style lang="scss" scoped>
 .footer-top {
-    margin-top: 3rem;
     background-image: url(../img/footer-bg.jpg);
     background-size: cover;
     padding: 1.5rem;
