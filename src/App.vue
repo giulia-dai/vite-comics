@@ -1,11 +1,17 @@
 <script >
 import TheHeader from "./components/TheHeader.vue"
 import TheFooter from "./components/TheFooter.vue"
+import TheMain from "./components/TheMain.vue"
+import MyJumbo from "./components/MyJumbo.vue"
+
+
 
 
 export default {
     components: {
         TheHeader,
+        TheMain,
+        MyJumbo,
         TheFooter
     },
     data() {
@@ -24,7 +30,8 @@ export default {
     </header>
 
     <main>
-        <h1>-> Main goes here -></h1>
+        <MyJumbo></MyJumbo>
+        <TheMain></TheMain>
     </main>
 
     <footer>
@@ -32,7 +39,9 @@ export default {
     </footer>
 </template>
 
-<style>
+<style lang="scss">
+@use './styles/general.scss' as *;
+
 html {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

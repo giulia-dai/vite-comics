@@ -165,7 +165,7 @@ li>a {
     position: absolute;
     width: 280px;
     top: -280px;
-    left: -650px;
+    left: -500px;
 }
 
 /* footer boottom */
@@ -211,4 +211,5 @@ h3 {
 .social-wrapper>li {
     padding: 7px;
     cursor: pointer;
-}</style>
+}
+</style>
