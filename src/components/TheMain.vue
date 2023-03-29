@@ -129,6 +129,12 @@ export default {
 
 }
 
+.current-btn>button:hover {
+    background-color: rgb(255, 255, 0);
+    box-shadow: 2px 1px 4px white;
+    color: black;
+}
+
 .btn {
     display: flex;
     justify-content: center;

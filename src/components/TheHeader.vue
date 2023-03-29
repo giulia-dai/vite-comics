@@ -4,6 +4,7 @@ export default {
     data() {
         return {
             logo: "dc-logo.png",
+
             sections: [
                 {
                     text: "CHARACTERS"
@@ -57,7 +58,7 @@ export default {
                 </div>
 
                 <ul>
-                    <li v-for="section in sections"><a href="#">{{ section.text }}</a></li>
+                    <li v-for="section in sections"><a href="#" class="size">{{ section.text }}</a></li>
 
                 </ul>
             </div>
@@ -89,9 +90,10 @@ ul {
 }
 
 li>a {
-    padding: 1rem;
+    padding: 0.6rem;
     text-decoration: none;
     color: black;
+    font-size: 14px;
 
     &:hover {
         color: #008FFA;

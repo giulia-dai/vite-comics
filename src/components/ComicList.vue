@@ -2,7 +2,7 @@
 export default {
     name: "ComicList",
     props: {
-        thumb: String,
+        thumb: Object,
     }
 }
 </script>
@@ -20,6 +20,7 @@ export default {
 .cards {
     width: calc(100% / 6 - 20px);
     margin: 10px;
+    cursor: pointer;
 
     img {
         width: 100%;
